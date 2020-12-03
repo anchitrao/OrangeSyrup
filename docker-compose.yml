@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  node:
+    build:
+      context: ./src
+      args:
+        node_name_prefix: "${NODE_NAME_PREFIX}"
+    tty: true
+
+    # # Shared volume
+    # # Uncommenting this causes the containers to share this directory
+    # # You can update source and have it show up immediately within the containers
+    # # For most use cases its better to take down the network and bring it back up (causing a rebuild)
+    # # instead though.
+    # volumes:
+    #   - ./src/:/home/proj/src
